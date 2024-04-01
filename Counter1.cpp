@@ -17,11 +17,12 @@ private:
 
 	////////////////////////////////////
 public:
-	Couter()
+	Couter(int valueX)
 	{
-		x = 1;
-	}
+		this->x = valueX;
 
+
+	}
 	void Set_magnifications() //возможность увеличить своё значение на 1
 	{
 		int valueX = x;
@@ -41,14 +42,6 @@ public:
 
 
 
-	int Set_ndividual(int x) // возможность создания экземпляра класса с инициализирующим начальным значением
-	{
-		this->x = x;
-		return x;
-	}
-
-
-
 
 };
 
@@ -62,7 +55,7 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	Couter num;
+	Couter num(1);
 	int q;
 	while (question)
 	{
@@ -72,7 +65,7 @@ int main()
 			question = 0;
 			std::cout << "\nВведите начальное значение счётчика : ";
 			std::cin >> q;
-			num.Set_ndividual(q);
+			num = Couter(q);
 			break;
 		}
 		if (answer == "нет") {
